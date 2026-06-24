@@ -1,4 +1,4 @@
-``Exercise 1
+Exercise 1
 HTML
 
 ```html
@@ -200,6 +200,7 @@ footer {
 ```
 <img width="1920" height="1080" alt="Screenshot (64)" src="https://github.com/user-attachments/assets/3a9fb184-818a-472f-9046-824ef7f3a623" />
 
-```OUTPUT
-<img width="1920" height="1080" alt="Screenshot (65)" src="https://github.com/user-attachments/assets/92a53d00-76f0-483f-a261-7a7ed95964e1" />
+OUTPUT
+<img width="1920" height="1080" alt="Screenshot (65)" src="https://github.com/user-attachments/assets/6298745a-f568-49f2-a874-6ce69b882d7d" />
+
 
