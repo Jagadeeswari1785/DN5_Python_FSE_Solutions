@@ -1,0 +1,120 @@
+<template>
+  <div class="page">
+
+    <h1>Courses</h1>
+
+    <div class="search">
+      <input
+        v-model="searchTerm"
+        placeholder="Search courses..."
+      />
+    </div>
+
+    <div class="course-grid">
+
+      <CourseCard
+        v-for="course in filteredCourses"
+        :key="course.id"
+        :name="course.name"
+        :code="course.code"
+        :credits="course.credits"
+        :grade="course.grade"
+      />
+
+    </div>
+
+  </div>
+</template>
+<script setup>
+import { ref, computed } from "vue";
+import CourseCard from "../components/CourseCard.vue";
+import { useEnrollmentStore } from "../stores/enrollment";
+
+const store = useEnrollmentStore();
+
+const searchTerm = ref("");
+
+const courses = ref([
+  {
+    id: 1,
+    name: "Data Structures",
+    code: "CS101",
+    credits: 4,
+    grade: "A"
+  },
+  {
+    id: 2,
+    name: "Database Management",
+    code: "CS102",
+    credits: 3,
+    grade: "B"
+  },
+  {
+    id: 3,
+    name: "Web Development",
+    code: "CS103",
+    credits: 4,
+    grade: "A"
+  },
+  {
+    id: 4,
+    name: "Computer Networks",
+    code: "CS104",
+    credits: 3,
+    grade: "B"
+  },
+  {
+    id: 5,
+    name: "Operating Systems",
+    code: "CS105",
+    credits: 4,
+    grade: "A"
+  }
+]);
+
+const filteredCourses = computed(() => {
+  return courses.value.filter(course =>
+    course.name
+      .toLowerCase()
+      .includes(searchTerm.value.toLowerCase())
+  );
+});
+</script>
+
+<style scoped>
+.search{
+
+margin:30px 0;
+
+display:flex;
+justify-content:center;
+
+}
+
+.course-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+
+}
+
+h1{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+@media(max-width:768px){
+
+.course-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+</style>
