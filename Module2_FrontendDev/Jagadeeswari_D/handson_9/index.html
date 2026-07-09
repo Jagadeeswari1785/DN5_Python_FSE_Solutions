@@ -1,0 +1,120 @@
+<!--
+Accessibility Audit (Lighthouse)
+
+Initial Accessibility Score: 100
+
+Flagged Issues:
+- None
+
+All accessibility checks passed successfully.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Portal</h1>
+
+        <nav aria-label="Main navigation">
+            <ul>
+<a href="#" aria-current="page">Home</a>                <li><a href="#">Courses</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Grades</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section id="hero">
+        <h2>Welcome to the Student Portal</h2>
+        <p>Manage your courses and academic progress.</p>
+        <button>Explore Courses</button>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h3>3</h3>
+            <p>Courses Enrolled</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>3.8</h3>
+            <p>GPA</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>6</h3>
+            <p>Semester</p>
+        </div>
+    </section>
+
+    <section id="controls">
+        <label for="search-courses">
+    Search Courses
+</label>
+
+<input
+    type="text"
+    id="search-courses"
+    placeholder="Search courses..."
+>
+<p id="results-count"
+   role="status"
+   aria-live="polite">
+</p>
+
+        <button id="sort-btn">
+            Sort by Credits
+        </button>
+    </section>
+
+    <section id="courses">
+
+        <h2>Available Courses</h2>
+        <p id="loading-message">Loading courses...</p>
+
+        <div class="course-grid"></div>
+
+        <p id="total-credits"></p>
+
+        <div id="selected-course"></div>
+
+    </section>
+    <section id="notifications">
+
+    <h2>Notifications</h2>
+
+    <p id="notification-loading">Loading notifications...</p>
+
+    <p id="notification-error"></p>
+
+    <button id="retry-btn" style="display:none;">
+        Retry
+    </button>
+
+    <div id="notification-list"></div>
+
+</section>
+</main>
+    <footer>
+        <p>&copy; 2026 Student Portal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="app.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+
+<script>
+cssVars();
+</script>
+</body>
+</html>
